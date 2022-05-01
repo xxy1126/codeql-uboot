@@ -2,7 +2,9 @@ import cpp
 
 class NetworkByteSwap extends Expr {
     NetworkByteSwap() {
-        exists(MacroInvocation f| f.getMacroName().regexpMatch("ntoh(s|l|ll)") | this=f.getExpr())
+        exists(MacroInvocation f| 
+            f.getMacroName().regexpMatch("ntoh(s|l|ll)") 
+            | this=f.getExpr())
     }
 }
 
